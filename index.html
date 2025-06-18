@@ -14,6 +14,7 @@
             --text-color: #333;
             --light-gray: #e9ecef;
             --warning-color: #d9534f;
+            --success-color: #5cb85c;
         }
         
         body {
@@ -78,10 +79,24 @@
             margin: 20px 0;
         }
         
-        .warning-note p {
+        .success-note {
+            background-color: #f0fff0;
+            border-left: 4px solid var(--success-color);
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .warning-note p, .success-note p {
             margin: 0;
-            color: var(--warning-color);
             font-weight: 500;
+        }
+        
+        .warning-note p {
+            color: var(--warning-color);
+        }
+        
+        .success-note p {
+            color: var(--success-color);
         }
         
         footer {
@@ -132,20 +147,24 @@
     </header>
     
     <div class="container">
-        <p class="last-updated">Last Updated: July 10, 2024</p>
+        <p class="last-updated">Last Updated: June 18, 2025</p>
+        
+        <div class="success-note">
+            <p><i class="fas fa-code-branch"></i> This app is now completely open-source and free to use!</p>
+        </div>
         
         <div class="warning-note">
-            <p><i class="fas fa-exclamation-triangle"></i> Important: The only official distribution platform for this app is APKPure. Downloads from any other sources are not legitimate and we take no responsibility for them.</p>
+            <p><i class="fas fa-exclamation-triangle"></i> Important: Please download the app only from trusted sources or our official GitHub repository and APKPure.</p>
         </div>
         
         <p>This Privacy Policy explains how <span class="highlight">Task App</span> (the "App") handles your information. By using this App.</p>
         
-        <h2>1. Official Distribution</h2>
-        <p>This app is officially distributed <span class="highlight">only through APKPure</span>. If you downloaded this app from any other platform or source, please be aware that:</p>
+        <h2>1. Open Source Information</h2>
+        <p>This app is now <span class="highlight">open-source and free</span> to use. The source code is available for review and contribution:</p>
         <ul>
-            <li>We cannot verify the authenticity or safety of versions obtained elsewhere</li>
-            <li>We provide no support for apps downloaded from unofficial sources</li>
-            <li>Unofficial versions may contain malware or modified code</li>
+            <li>Complete transparency - anyone can inspect the code</li>
+            <li>Free to use with no hidden costs</li>
+            <li>Community contributions are welcome</li>
         </ul>
         
         <h2>2. No Data Collection</h2>
@@ -176,13 +195,15 @@
                 <i class="fas fa-envelope"></i>
                 <a href="mailto:bawiceu1428@gmail.com">bawiceu1428@gmail.com</a>
             </div>
+            <p>Or visit our GitHub repository to contribute or report issues.</p>
         </div>
     </div>
     
     <footer>
         <div class="container">
-            <p>&copy; 2024 Task App. All rights reserved.</p>
-            <p>Official distribution only through <a href="https://www.apkpure.com" target="_blank">APKPure</a></p>
+            <p>&copy; 2025 Task App. Open-source and free to use.</p>
+            <p>Source code available on <a href="https://github.com/BawiCeu16/task" target="_blank">GitHub</a></p>
+            <p>And <a href="https://apkpure.com/task/com.c.task" target="_blank">APKPure</a></p>
         </div>
     </footer>
 </body>
