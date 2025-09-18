@@ -1,210 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task App - Privacy Policy</title>
-    <!-- Add Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #4a6fa5;
-            --secondary-color: #166088;
-            --background-color: #f8f9fa;
-            --text-color: #333;
-            --light-gray: #e9ecef;
-            --warning-color: #d9534f;
-            --success-color: #5cb85c;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            margin: 0;
-            padding: 0;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 2.2em;
-        }
-        
-        h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--light-gray);
-            padding-bottom: 8px;
-            margin-top: 30px;
-        }
-        
-        .last-updated {
-            font-style: italic;
-            color: #666;
-            text-align: right;
-            margin-bottom: 30px;
-        }
-        
-        .contact-box {
-            background-color: var(--light-gray);
-            padding: 20px;
-            border-radius: 5px;
-            margin: 30px 0;
-        }
-        
-        .highlight {
-            font-weight: bold;
-            color: var(--secondary-color);
-        }
-        
-        .warning-note {
-            background-color: #fff3f3;
-            border-left: 4px solid var(--warning-color);
-            padding: 15px;
-            margin: 20px 0;
-        }
-        
-        .success-note {
-            background-color: #f0fff0;
-            border-left: 4px solid var(--success-color);
-            padding: 15px;
-            margin: 20px 0;
-        }
-        
-        .warning-note p, .success-note p {
-            margin: 0;
-            font-weight: 500;
-        }
-        
-        .warning-note p {
-            color: var(--warning-color);
-        }
-        
-        .success-note p {
-            color: var(--success-color);
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-        
-        a:hover {
-            text-decoration: underline;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task App - Privacy Policy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --blue: #2563eb;
+      --blue-fade: #60a5fa;
+      --white: #ffffff;
+      --black: #0f172a;
 
-        .email-contact {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
+      --bg-light: #ffffff;
+      --text-light: #0f172a;
+      --card-light: #f8fafc;
 
-        .email-contact i {
-            color: var(--secondary-color);
-            font-size: 1.2em;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+      --bg-dark: #0f172a;
+      --text-dark: #f1f5f9;
+      --card-dark: #1e293b;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light {
+      background: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 0 10px;
+    }
+
+    header img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 100px; /* fully rounded icon */
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    .built-by {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      opacity: 0.75;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: var(--blue);
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin: 10px 0 20px 20px;
+    }
+
+    /* --- Last Updated as Tone-Filled Card --- */
+    .last-updated {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      margin: 20px 0 30px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.light .last-updated {
+      background: var(--card-light);
+      color: var(--text-light);
+    }
+
+    body.dark .last-updated {
+      background: var(--card-dark);
+      color: var(--text-dark);
+    }
+
+    .note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      margin: 15px 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .note.success {
+      background: rgba(34,197,94,0.15);
+      color: #22c55e;
+    }
+
+    .note.warning {
+      background: rgba(239,68,68,0.15);
+      color: #ef4444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+      border-radius: 30px;
+      padding: 6px 10px;
+    }
+
+    body.light .theme-toggle {
+      background: var(--card-light);
+    }
+
+    body.dark .theme-toggle {
+      background: var(--card-dark);
+    }
+
+    .theme-toggle button {
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 100px;
+      transition: background 0.3s, color 0.3s;
+      color: inherit;
+    }
+
+    .theme-toggle button.active {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    /* Additional card style for Contact Us */
+    .card {
+      background: var(--card-light);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body.dark .card {
+      background: var(--card-dark);
+      color: var(--text-dark);
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Task App Privacy Policy</h1>
-        </div>
-    </header>
-    
-    <div class="container">
-        <p class="last-updated">Last Updated: June 18, 2025</p>
-        
-        <div class="success-note">
-            <p><i class="fas fa-code-branch"></i> This app is now completely open-source and free to use!</p>
-        </div>
-        
-        <div class="warning-note">
-            <p><i class="fas fa-exclamation-triangle"></i> Important: Please download the app only from trusted sources or our official GitHub repository and APKPure.</p>
-        </div>
-        
-        <p>This Privacy Policy explains how <span class="highlight">Task App</span> (the "App") handles your information. By using this App.</p>
-        
-        <h2>1. Open Source Information</h2>
-        <p>This app is now <span class="highlight">open-source and free</span> to use. The source code is available for review and contribution:</p>
-        <ul>
-            <li>Complete transparency - anyone can inspect the code</li>
-            <li>Free to use with no hidden costs</li>
-            <li>Community contributions are welcome</li>
-        </ul>
-        
-        <h2>2. No Data Collection</h2>
-        <p>This App <span class="highlight">does not collect, store, or transmit</span> any personal data to external servers. All your tasks and app-related data are stored <span class="highlight">only on your device</span> using local storage (Shared Preferences).</p>
-        
-        <h2>3. No Ads or Tracking</h2>
-        <ul>
-            <li>The App <span class="highlight">does not display any advertisements</span></li>
-            <li>The App <span class="highlight">does not use any analytics or tracking tools</span></li>
-            <li>No data is shared with third-party companies or advertisers</li>
-        </ul>
-        
-        <h2>4. Data Storage & Security</h2>
-        <p>All your tasks and settings are saved <span class="highlight">locally on your device</span> and are not backed up on any cloud service.</p>
-        <p>If you uninstall the App, all stored data will be <span class="highlight">permanently deleted</span>.</p>
-        <p>Since the data is stored only on your device, we <span class="highlight">cannot recover lost data</span> if the app is deleted.</p>
-        
-        <h2>5. App Permissions</h2>
-        <p>The App does <span class="highlight">not</span> require any special permissions (like camera, contacts, or location) as it only uses local storage to save your tasks.</p>
-        
-        <h2>6. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy in the future. Any changes will be posted here, so please check back periodically.</p>
-        
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <p>If you have any questions about this Privacy Policy or encounter any issues with the App, please contact us:</p>
-            <div class="email-contact">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:bawiceu1428@gmail.com">bawiceu1428@gmail.com</a>
-            </div>
-            <p>Or visit our GitHub repository to contribute or report issues.</p>
-        </div>
+<body class="light">
+  <header>
+    <img src="assets/task.png" alt="Task App Logo"/>
+    <h1>Task App Privacy Policy</h1>
+    <p class="built-by">built this with AI chats</p>
+  </header>
+
+  <div class="container">
+    <!-- Last updated now inside tone-filled card -->
+    <p class="last-updated">Last updated — <strong>Sept 16, 2025</strong></p>
+
+    <div class="note success">
+      <div class="icon"><i class="fas fa-code-branch"></i></div>
+      <div>This project is open-source and free to use. Contributions welcome.</div>
     </div>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Task App. Open-source and free to use.</p>
-            <p>Source code available on <a href="https://github.com/BawiCeu16/task" target="_blank">GitHub</a></p>
-            <p>And <a href="https://apkpure.com/task/com.c.task" target="_blank">APKPure</a></p>
-        </div>
-    </footer>
+    <div class="note warning">
+      <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+      <div>Download only from official sources (GitHub / APKPure) to avoid tampered builds.</div>
+    </div>
+
+    <p>This Privacy Policy explains how <span class="highlight">Task App</span> (the "App") handles your information and ensures your privacy and security while using our services.</p>
+
+    <h2>1. Open Source Information</h2>
+    <p>The app is <strong>open-source and free</strong> to use:</p>
+    <ul>
+      <li>Transparency — anyone can inspect the code</li>
+      <li>No hidden costs or fees</li>
+      <li>Community contributions welcome to improve the app</li>
+    </ul>
+
+    <h2>2. No Data Collection</h2>
+    <p>The App does not collect, store, or transmit any personal data. All your information remains securely on your device. We do not track usage or share any data with third parties.</p>
+
+    <h2>3. No Ads or Tracking</h2>
+    <ul>
+      <li>No advertisements</li>
+      <li>No analytics or tracking tools</li>
+      <li>Your usage remains completely private</li>
+    </ul>
+
+    <h2>4. Data Storage & Security</h2>
+    <p>All tasks, notes, and app settings are stored locally on your device. Data is encrypted to ensure safety. If you uninstall the app, all stored data is permanently deleted and cannot be recovered.</p>
+
+    <h2>5. App Permissions</h2>
+    <p>The app requires <strong>no special permissions</strong> such as camera, contacts, or location. It only accesses local storage to save your tasks and preferences.</p>
+
+    <h2>6. User Responsibility</h2>
+    <p>Since the app stores data locally, users are responsible for backups if needed. Ensure your device is secure to prevent accidental loss of tasks or settings.</p>
+
+    <h2>7. Security Practices</h2>
+    <p>We follow best practices to ensure that the code is safe and free from vulnerabilities. Community reviews help maintain transparency and security.</p>
+
+    <h2>8. Updates to Privacy Policy</h2>
+    <p>This Privacy Policy may change in the future. Any updates will be reflected on this page. We encourage users to review it periodically.</p>
+
+    <div class="card">
+      <h2>Contact Us</h2>
+      <p>Email us at <a href="mailto:bawiceu1428@gmail.com">bawiceu1428@gmail.com</a></p>
+      <p>Or visit our <a href="https://github.com/BawiCeu16/task" target="_blank">GitHub repository</a> to contribute, report issues, or ask questions.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Task App. Open-source and free to use.</p>
+    <p><a href="https://github.com/BawiCeu16/task" target="_blank">GitHub</a> | <a href="https://apkpure.com/task/com.c.task" target="_blank">APKPure</a></p>
+  </footer>
+
+  <div class="theme-toggle">
+    <button id="system" class="active"><i class="fas fa-desktop"></i></button>
+    <button id="light"><i class="fas fa-sun"></i></button>
+    <button id="dark"><i class="fas fa-moon"></i></button>
+  </div>
+
+  <script>
+    const systemBtn = document.getElementById("system");
+    const lightBtn = document.getElementById("light");
+    const darkBtn = document.getElementById("dark");
+    const body = document.body;
+
+    function setTheme(mode) {
+      body.classList.remove("light", "dark");
+      if (mode === "light") body.classList.add("light");
+      else if (mode === "dark") body.classList.add("dark");
+      else {
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        body.classList.add(prefersDark ? "dark" : "light");
+      }
+      document.querySelectorAll(".theme-toggle button").forEach(b => b.classList.remove("active"));
+      if (mode === "light") lightBtn.classList.add("active");
+      else if (mode === "dark") darkBtn.classList.add("active");
+      else systemBtn.classList.add("active");
+    }
+
+    systemBtn.onclick = () => setTheme("system");
+    lightBtn.onclick = () => setTheme("light");
+    darkBtn.onclick = () => setTheme("dark");
+
+    setTheme("system");
+  </script>
 </body>
 </html>
