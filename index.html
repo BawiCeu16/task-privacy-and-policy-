@@ -1,295 +1,130 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Task App - Privacy Policy</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>task — privacy policy</title>
+  <meta name="description" content="task privacy policy" />
   <style>
     :root {
-      --blue: #2563eb;
-      --blue-fade: #60a5fa;
-      --white: #ffffff;
-      --black: #0f172a;
-
-      --bg-light: #ffffff;
-      --text-light: #0f172a;
-      --card-light: #f8fafc;
-
-      --bg-dark: #0f172a;
-      --text-dark: #f1f5f9;
-      --card-dark: #1e293b;
+      --bg: #ffffff;
+      --card: #f8f8f8;
+      --text: #0f1011;
+      --muted: #5b5f66;
+      --border: #e9e9ea;
+      --radius: 10px;
+      --maxw: 720px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0c0d;
+        --card: #111315;
+        --text: #f3f4f6;
+        --muted: #b3b9c3;
+        --border: #1f2329;
+      }
     }
 
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      transition: background 0.3s, color 0.3s;
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans;
+      color: var(--text);
+      background: var(--bg);
     }
 
-    body.light {
-      background: var(--bg-light);
-      color: var(--text-light);
-    }
-
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
-
-    .container {
-      max-width: 800px;
+    .wrap {
+      max-width: var(--maxw);
       margin: 0 auto;
-      padding: 20px;
+      padding: 32px 20px;
     }
 
     header {
       text-align: center;
-      padding: 30px 0 10px;
+      margin-bottom: 28px;
     }
 
-    header img {
-      width: 100px;
-      height: 100px;
+    .logo {
+      width: 120px;
+      height: 120px;
+      max-width: 40vw;   /* responsive: max 40% of viewport width */
+      max-height: 40vw;
+      border-radius: var(--radius);
+      margin: 0 auto 16px;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border-radius: 100px; /* fully rounded icon */
-      margin-bottom: 15px;
+      border-radius: var(--radius);
+      display: block;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 1.8rem;
-      font-weight: 600;
+    h1 { margin: 0; font-size: 28px; text-transform: lowercase; }
+    .subtle { color: var(--muted); font-size: 14px; text-transform: lowercase; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      animation: fadeUp .6s ease both;
+      margin-bottom: 20px;
     }
 
-    .built-by {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      font-weight: 500;
-      opacity: 0.75;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: var(--blue);
-    }
-
-    p {
-      margin: 10px 0;
-      line-height: 1.6;
-    }
-
-    ul {
-      margin: 10px 0 20px 20px;
-    }
-
-    /* --- Last Updated as Tone-Filled Card --- */
-    .last-updated {
-      display: inline-block;
-      padding: 10px 16px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      margin: 20px 0 30px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.light .last-updated {
-      background: var(--card-light);
-      color: var(--text-light);
-    }
-
-    body.dark .last-updated {
-      background: var(--card-dark);
-      color: var(--text-dark);
-    }
-
-    .note {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 16px;
-      border-radius: 12px;
-      margin: 15px 0;
-      font-size: 0.95rem;
-      font-weight: 500;
-    }
-
-    .note.success {
-      background: rgba(34,197,94,0.15);
-      color: #22c55e;
-    }
-
-    .note.warning {
-      background: rgba(239,68,68,0.15);
-      color: #ef4444;
-    }
+    h2 { margin-top: 0; text-transform: lowercase; }
 
     footer {
-      text-align: center;
-      padding: 30px 0;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      margin-top: 28px; color: var(--muted); font-size: 13px; text-align: center; text-transform: lowercase;
     }
 
-    a {
-      color: var(--blue);
-      text-decoration: none;
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Theme toggle */
-    .theme-toggle {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      gap: 8px;
-      border-radius: 30px;
-      padding: 6px 10px;
-    }
-
-    body.light .theme-toggle {
-      background: var(--card-light);
-    }
-
-    body.dark .theme-toggle {
-      background: var(--card-dark);
-    }
-
-    .theme-toggle button {
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 8px 12px;
-      border-radius: 100px;
-      transition: background 0.3s, color 0.3s;
-      color: inherit;
-    }
-
-    .theme-toggle button.active {
-      background: var(--blue);
-      color: var(--white);
-    }
-
-    /* Additional card style for Contact Us */
-    .card {
-      background: var(--card-light);
-      padding: 20px;
-      border-radius: 12px;
-      margin: 30px 0;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    body.dark .card {
-      background: var(--card-dark);
-      color: var(--text-dark);
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
-<body class="light">
-  <header>
-    <img src="assets/task.png" alt="Task App Logo"/>
-    <h1>Task App Privacy Policy</h1>
-    <p class="built-by">built this with AI chats</p>
-  </header>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <img src="assets/task.png" alt="task icon" />
+      </div>
+      <h1>nix</h1>
+      <div class="subtle">privacy policy</div>
+    </header>
 
-  <div class="container">
-    <!-- Last updated now inside tone-filled card -->
-    <p class="last-updated">Last updated — <strong>Sept 16, 2025</strong></p>
+    <section class="card">
+      <h2>privacy first</h2>
+      <p>task is an open-source application designed to work entirely offline. we don't collect any personal data, and we don't use any servers.</p>
+      <p>everything runs locally on your device. your data always stays with you.</p>
+    </section>
 
-    <div class="note success">
-      <div class="icon"><i class="fas fa-code-branch"></i></div>
-      <div>This project is open-source and free to use. Contributions welcome.</div>
-    </div>
-    <div class="note warning">
-      <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
-      <div>Download only from official sources (GitHub / APKPure) to avoid tampered builds.</div>
-    </div>
+    <section class="card">
+      <h2>how the app works</h2>
+      <p>your data (for example, tasks and creation dates) are stored locally on your device using shared preferences.</p>
+      <p>because the project is open-source, anyone can review the code to verify it operates as described.</p>
+    </section>
 
-    <p>This Privacy Policy explains how <span class="highlight">Task App</span> (the "App") handles your information and ensures your privacy and security while using our services.</p>
+    <section class="card">
+      <h2>third-party sources</h2>
+      <p>task is officially distributed only by the developer through trusted sources such as github. we are not responsible for any issues, damages, or security risks that may arise if the app is downloaded from unofficial sources or modified by third parties.</p>
+    </section>
 
-    <h2>1. Open Source Information</h2>
-    <p>The app is <strong>open-source and free</strong> to use:</p>
-    <ul>
-      <li>Transparency — anyone can inspect the code</li>
-      <li>No hidden costs or fees</li>
-      <li>Community contributions welcome to improve the app</li>
-    </ul>
+    <section class="card">
+      <h2>test app availability</h2>
+      <p>the test version of task is only available through the developer’s official google drive link associated with <strong>bawiceu1428@gmail.com</strong>. any other distributions are not authorized and may pose security risks.</p>
+    </section>
 
-    <h2>2. No Data Collection</h2>
-    <p>The App does not collect, store, or transmit any personal data. All your information remains securely on your device. We do not track usage or share any data with third parties.</p>
-
-    <h2>3. No Ads or Tracking</h2>
-    <ul>
-      <li>No advertisements</li>
-      <li>No analytics or tracking tools</li>
-      <li>Your usage remains completely private</li>
-    </ul>
-
-    <h2>4. Data Storage & Security</h2>
-    <p>All tasks, notes, and app settings are stored locally on your device. Data is encrypted to ensure safety. If you uninstall the app, all stored data is permanently deleted and cannot be recovered.</p>
-
-    <h2>5. App Permissions</h2>
-    <p>The app requires <strong>no special permissions</strong> such as camera, contacts, or location. It only accesses local storage to save your tasks and preferences.</p>
-
-    <h2>6. User Responsibility</h2>
-    <p>Since the app stores data locally, users are responsible for backups if needed. Ensure your device is secure to prevent accidental loss of tasks or settings.</p>
-
-    <h2>7. Security Practices</h2>
-    <p>We follow best practices to ensure that the code is safe and free from vulnerabilities. Community reviews help maintain transparency and security.</p>
-
-    <h2>8. Updates to Privacy Policy</h2>
-    <p>This Privacy Policy may change in the future. Any updates will be reflected on this page. We encourage users to review it periodically.</p>
-
-    <div class="card">
-      <h2>Contact Us</h2>
-      <p>Email us at <a href="mailto:bawiceu1428@gmail.com">bawiceu1428@gmail.com</a></p>
-      <p>Or visit our <a href="https://github.com/BawiCeu16/task" target="_blank">GitHub repository</a> to contribute, report issues, or ask questions.</p>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Task App. Open-source and free to use.</p>
-    <p><a href="https://github.com/BawiCeu16/task" target="_blank">GitHub</a> | <a href="https://apkpure.com/task/com.c.task" target="_blank">APKPure</a></p>
-  </footer>
-
-  <div class="theme-toggle">
-    <button id="system" class="active"><i class="fas fa-desktop"></i></button>
-    <button id="light"><i class="fas fa-sun"></i></button>
-    <button id="dark"><i class="fas fa-moon"></i></button>
+    <footer>
+      © <span id="year"></span> task. all rights reserved.
+    </footer>
   </div>
 
   <script>
-    const systemBtn = document.getElementById("system");
-    const lightBtn = document.getElementById("light");
-    const darkBtn = document.getElementById("dark");
-    const body = document.body;
-
-    function setTheme(mode) {
-      body.classList.remove("light", "dark");
-      if (mode === "light") body.classList.add("light");
-      else if (mode === "dark") body.classList.add("dark");
-      else {
-        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        body.classList.add(prefersDark ? "dark" : "light");
-      }
-      document.querySelectorAll(".theme-toggle button").forEach(b => b.classList.remove("active"));
-      if (mode === "light") lightBtn.classList.add("active");
-      else if (mode === "dark") darkBtn.classList.add("active");
-      else systemBtn.classList.add("active");
-    }
-
-    systemBtn.onclick = () => setTheme("system");
-    lightBtn.onclick = () => setTheme("light");
-    darkBtn.onclick = () => setTheme("dark");
-
-    setTheme("system");
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
